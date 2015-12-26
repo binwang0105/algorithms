@@ -48,6 +48,7 @@ public class Solution {
 /* 
 * List is an abstract class, cannot be instantiated
 * 数组小心越界问题，比如访问i-1时候需要判断i>1
+* 有0，1个元素时候的base cases
 * 先考虑base cases: nums中只有一个元素
 *
 */
