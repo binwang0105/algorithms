@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -28,5 +28,5 @@ public class Solution {
 /*
 * 1. 注意DFS的顺序，如果不为空就一直访问孩子，对于二叉树先左后右
 * 2. DFS本质在于递归，所以应该是一个函数调用另一个函数
-*
+* 3. 如何判断一个节点是叶子？root.left == null, root.right == null;
 */
