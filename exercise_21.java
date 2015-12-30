@@ -27,5 +27,4 @@ public class Solution {
         return head;
     }
 }
-
 //head以及head.next需要分别进行赋值
