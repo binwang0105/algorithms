@@ -26,10 +26,10 @@ public class Solution {
 	            //System.out.println(c[i]);
 	        }
 	        
-	        String stc = String.valueOf(c);
-	        return c.toString().equals(pattern);
+	        return String.valueOf(c).equals(pattern);
 	    }
 }
 
 //将char[]转化为String使用String.valueOf()
 //map.get(key)可以得到key对应的键值
+http://my.oschina.net/Tsybius2014/blog/514983
