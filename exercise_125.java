@@ -2,30 +2,25 @@ public class Solution {
     public boolean isPalindrome(String s) {
         if(s.isEmpty())
             return true;
-        String stringLowerCase = s.toLowerCase();
-        char[] c = stringLowerCase.toCharArray();
-        int i = 0;
-        int j = c.length - 1;
-        
-        for(int k = 0; k < c.length; k++){
-            if(!((c[k]>=0 && c[k]<='9')||(c[k] >= 'a' && c[k] <= 'z')))
-                c[k] = ' ';
-        }
-        
-        while(i != j){
-           if(c[i]== ' '){
-                i++;
+        String temp = s.toLowerCase();
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < temp.length(); i++){
+            if(temp.charAt(i)>='a' && temp.charAt(i)<='z'){
+                sb.append(temp.charAt(i));
                 continue;
-           }
-           if(c[j] == ' '){
-                j--;
+            }
+            if(temp.charAt(i)>='0' && temp.charAt(i)<='9'){
+                sb.append(temp.charAt(i));
                 continue;
-           }
-           if(c[i] != c[j])
-           {
-               return false;
-           }
+            }
         }
+        String postString = sb.toString();
+        for(int j = 0; j < postString.length()/2; j++){
+            if(postString.charAt(j) != postString.charAt(postString.length()-1-j))
+                return false;
+        }
+        //String reverseString = sb.reverse().toString();
+        //return postString.equals(reverseString);
         return true;
     }
 }
