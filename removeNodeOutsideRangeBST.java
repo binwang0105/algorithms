@@ -5,15 +5,15 @@ public TreeNode removeOutsideRange(TreeNode root, int min, int max){
 	root.right = removeOutsideRange(root.right, min, max);
 
 	if(root.val < min){
-		TreeNode node = root.right;
+		TreeNode rnode = root.right;
 		delete root;
-		return root;
+		return rnode;
 	}
 
 	if(root.val > max){
-		TreeNode node = root.left;
+		TreeNode lnode = root.left;
 		delete root;
-		return root;
+		return lnode;
 	}
 	return root;
 }
