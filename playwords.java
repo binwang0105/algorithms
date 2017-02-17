@@ -1,3 +1,5 @@
+https://www.hackerrank.com/challenges/strplay/editorial
+
 
 import java.io.*;
 import java.util.*;
