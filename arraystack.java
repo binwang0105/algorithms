@@ -1,11 +1,11 @@
-public class FixedSizeStack
+public class FixedSizeStack<Item> implements Iterable<Item>
 {
-	private String[] s;
+	private Item[] s;
 	private int N = 0;
 
 	public FixedSizeStack(int capacity)
 	{
-		s = new String[capacity];
+		s = (Item[])new Object[capacity];
 	} 
 
 	public boolean isEmpty
@@ -13,15 +13,46 @@ public class FixedSizeStack
 		return N == 0;
 	}
 
-	public String pop()
+	public Item pop()
 	{
-		String item = s[--N];
+		if(isEmpty())
+			throw new NoSuchElementException();
+		Item item = s[--N];
 		s[N] = null;
 		return item;
 	}
 
-	public void push(String item)
+	public void push(Item item)
 	{
 		s[N++] = item;
 	}
+
+	public ArrayStackIterator<Item> iterator()
+	{
+		return ArrayStackIterator<Item>();
+	}
+
+	private class ArrayStackIterator<Item> implements Iterator<Item>
+	{
+		private int i;
+
+		public boolean hasNext()
+		{
+			return i < N;
+		}
+
+		public void remove()
+		{
+			throw new UnsupportedOperationException();
+		}
+
+		public Item next()
+		{
+			if(hasNext())
+				throw new NoSuchElementException();
+
+			return a[i--];
+		}
+	}
+
 }
